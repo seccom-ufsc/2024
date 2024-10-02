@@ -45,7 +45,8 @@ canvas#canv {
   flex-wrap: wrap;
 }
 
-.contact-card, .palest-contact-card {
+.contact-card,
+.speaker-contact-card {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,18 +62,9 @@ canvas#canv {
   }
 }
 
-div.palest-contact-card {
+div.speaker-contact-card {
   width: 3rem;
   height: 3rem;
-}
-
-footer {
-  margin-top: 2rem;
-  background-color: $primary;
-  color: white;
-  padding: 1rem 0;
-  text-align: center;
-  height: 5rem;
 }
 
 /* FullCalendar */
@@ -128,81 +120,82 @@ div.event-section {
   border: 1px solid white;
 }
 
-/* Carrosel */
+/* #region Carousel --------------------------------------------------------- */
 
-.slick-slide > div {
-  margin-left: 5px;
-  margin-right: 5px;
-}
+.carrossel-item {
+  margin: 1rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
-div.carrossel-item {
-  padding: 10px;
-}
-
-.main-bg-color {
-  background-color: $primary;
-
-  &:focus {
-    background-color: $primary;
+  > img {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 }
 
-.main-border-color {
-  border-color: white;
+#speakerModal {
+  #modal-speaker-abstract,
+  #modal-speaker-lectures {
+    padding: 1rem;
+    // padding-top: 0.5rem;
+    border-bottom: 1px solid rgba($color: #fff, $alpha: 0.3);
+  }
+  #modal-speaker-lectures {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  #modal-speaker-photo {
+    display: block;
+    width: 60%;
+    height: auto;
+  }
 }
 
-.carrossel {
-  font-family: "Roboto Mono", monospace;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-top: 20px;
+.modal-footer {
+  .contact-list {
+    display: flex;
+    gap: 4px;
+    a {
+      display: block;
+      width: 50px;
+      height: 50px;
+      color: white;
+
+      &.disabled {
+        pointer-events: none;
+        background-color: #2e2e5e22;
+
+        > div {
+          background-color: #2e2e5e22;
+        }
+
+        i {
+          color: gray;
+        }
+      }
+    }
+
+    i {
+      font-size: 30px;
+    }
+  }
 }
 
-.carrossel-item {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  // height: 250px;
-  margin: auto;
-  text-align: center;
-  align-items: center;
-  // background-color: #343a40;
-  color: var(--bs-nav-tabs-link-active-color);
-}
+/* #endregion Carousel ------------------------------------------------------ */
 
-.carrossel-item img {
-  display: block;
-  margin: 0 auto;
-  margin-top: 20px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 
-a.disabled {
-  pointer-events: none;
-}
-
-a.disabled > div{
-  background-color: #2e2e5e22;
-}
-
-a.disabled > div > i {
-  color: gray;
-}
-
-.palest-contact > a {
-  width: 100%;
-  height: 100%;
-}
-
-a#palest-contect-email, a#palest-contect-github {
-  display: block;
-  width: 50px;
-  height: 50px;
+footer {
+  margin-top: 2rem;
+  background-color: $primary;
   color: white;
-}
-
-a#palest-contect-email>div>i, a#palest-contect-github>div>i {
-  font-size: 30px;
+  padding: 1rem 0;
+  text-align: center;
+  height: 5rem;
 }
